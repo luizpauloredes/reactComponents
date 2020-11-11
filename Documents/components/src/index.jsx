@@ -1,65 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import faker from 'faker';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
 const App = () => {
 
     return (
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()}/>
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 06:00PM</span>
-                    </div>
-                    <div className="text">
-                        Nice blog post!
-                    </div>
+            <ApprovalCard>
+                <div>
+                    <h4>Morning</h4>
+                    Are u sure u want to to do this?
                 </div>
-            </div>
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail author="luiz" timeAgo="Today at 04:45PM" commentText="It was a great thing" avatarImg={faker.image.avatar()} />
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail author="Anna" timeAgo="Today at 09:31AM" commentText="Man what was that?" avatarImg={faker.image.avatar()} />
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail author="John" timeAgo="Yesterday at 01:00PM" commentText="Amazing, keep it like that" avatarImg={faker.image.avatar()} />
+            </ApprovalCard>
 
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()}/>
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 06:00PM</span>
-                    </div>
-                    <div className="text">
-                        Nice blog post!
-                    </div>
-                </div>
-            </div>
 
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()}/>
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 06:00PM</span>
-                    </div>
-                    <div className="text">
-                        Nice blog post!
-                    </div>
-                </div>
-            </div>
 
-            
         </div>
     )
 };
 
 ReactDOM.render(<App />, document.querySelector('#root'));
+
